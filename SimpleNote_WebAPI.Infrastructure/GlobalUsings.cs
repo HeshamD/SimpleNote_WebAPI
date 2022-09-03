@@ -1,0 +1,13 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using System.ComponentModel.DataAnnotations;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using Microsoft.EntityFrameworkCore;
+global using System.Linq.Expressions;
+global using SimpleNote_WebAPI.Infrastructure.IRepositories;
+global using SimpleNote_WebAPI.Infrastructure.Entities;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

@@ -1,0 +1,25 @@
+﻿global using SimpleNote_WebAPI.Infrastructure;
+global using Microsoft.EntityFrameworkCore;
+global using SimpleNote_WebAPI.Infrastructure.IRepositories;
+global using SimpleNote_WebAPI.Infrastructure.IRepositoriesImp;
+global using SimpleNote_WebAPI.Services.IServices;
+global using SimpleNote_WebAPI.Services.ServicesImp;
+global using Microsoft.AspNetCore.Mvc;
+global using SimpleNote_WebAPI.Infrastructure.Entities;
+global using SimpleNote_WebAPI.Services.AutoMapper;
+global using SimpleNote_WebAPI.Dtos;
+global using SimpleNote_WebAPI.Infrastructure.IRepositories;
+global using AutoMapper;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.IdentityModel.Tokens;
+global using SimpleNote_WebAPI.Helpers;
+global using Microsoft.AspNetCore.Identity;
+global using System.Text;
+global using System.Security.Claims;
+global using System.IdentityModel.Tokens.Jwt;
+global using Microsoft.AspNetCore.Authorization;
+global using SimpleNote_WebAPI.Services.ServicesImp;
+global using System.Configuration;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+
