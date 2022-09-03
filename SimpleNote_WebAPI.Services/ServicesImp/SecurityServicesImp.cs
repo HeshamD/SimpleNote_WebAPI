@@ -2,6 +2,7 @@
 
 
 using Microsoft.AspNetCore.Http;
+using System.Security.Cryptography;
 
 namespace SimpleNote_WebAPI.Services.ServicesImp
 {
@@ -32,6 +33,7 @@ namespace SimpleNote_WebAPI.Services.ServicesImp
 
             var claims = new[]
             {
+                new Claim("id",user.User_Id.ToString()), // grapping that id so i can know which user is has access to the current token 
                 new Claim(ClaimTypes.NameIdentifier,user.UserName),
                 new Claim(ClaimTypes.GivenName,user.UserName),
 
@@ -47,6 +49,13 @@ namespace SimpleNote_WebAPI.Services.ServicesImp
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        private static string GenerateRefreshTokenString()
+        {
+            var randomNumber = new byte[32];
+            using var randomNumberGenerator = RandomNumberGenerator.Create();
+            randomNumberGenerator.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
         }
 
     }

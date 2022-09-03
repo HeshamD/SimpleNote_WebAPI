@@ -9,11 +9,9 @@ namespace SimpleNote_WebAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private IConfiguration _config;
         private ISecurityServices _securityServices;
-        public LoginController(IConfiguration config, ISecurityServices securityServices)
+        public LoginController( ISecurityServices securityServices)
         {
-            _config = config;
             _securityServices = securityServices;
         }
 
@@ -36,5 +34,7 @@ namespace SimpleNote_WebAPI.Controllers
             return StatusCode(401, "Not authorized");
         }
 
+
+        
     }
 }

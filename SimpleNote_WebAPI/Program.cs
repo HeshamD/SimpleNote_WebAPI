@@ -4,10 +4,31 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-//JWT Services
-
-builder.Configuration.GetSection("JWT");
 //config for JWT Bearer
+
+//var jwtTokenConfig = builder.Configuration.GetSection("JWT").Get<JwtTokenConfig>();
+//builder.Services.AddSingleton<JwtTokenConfig>(jwtTokenConfig);
+//builder.Services.AddAuthentication(x =>
+//{
+//    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//}).AddJwtBearer(x =>
+//{
+//    x.RequireHttpsMetadata = true;
+//    x.SaveToken = true;
+//    x.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuer = true,
+//        ValidIssuer = jwtTokenConfig.Issuer,
+//        ValidateIssuerSigningKey = true,
+//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtTokenConfig.key)),
+//        ValidAudience = jwtTokenConfig.Audience,
+//        ValidateAudience = true,
+//        ValidateLifetime = true,
+//        ClockSkew = TimeSpan.FromMinutes(1)
+//    };
+//});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
